@@ -4,6 +4,9 @@ const uuidv1 = require("uuid/v1");
 
 const { ipcMain } = require("electron");
 
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+const has = (subject, property) => hasOwnProperty.call(subject, property);
+
 let listeners = {};
 
 function send(eventName, data) {
@@ -49,7 +52,7 @@ function on(eventName, callback, async = false) {
             async: async
         };
 
-    if (listeners.hasOwnProperty(eventName)) {
+    if (has(listeners, eventName)) {
         listeners[eventName].push(event);
     } else {
         listeners[eventName] = [event];
