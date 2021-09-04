@@ -1,3 +1,4 @@
+'use strict';
 module.exports = {
     "globals": {
         "angular": true,
@@ -14,4 +15,4 @@ module.exports = {
         "path": true,
         "$": true
     }
-}
+};

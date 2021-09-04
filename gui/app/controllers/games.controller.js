@@ -1,6 +1,6 @@
 "use strict";
 
-const { indexOf } = require("angular-route");
+// const { indexOf } = require("angular-route");
 
 (function() {
     angular

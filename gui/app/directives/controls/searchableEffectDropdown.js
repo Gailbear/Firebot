@@ -1,7 +1,7 @@
 "use strict";
 (function() {
     //This a wrapped dropdown element that automatically handles the particulars
-    const Effect = require("../../backend/common/EffectType.js");
+    //const Effect = require("../../backend/common/EffectType.js");
 
     angular.module("firebotApp").component("searchableEffectDropdown", {
         bindings: {
@@ -11,17 +11,17 @@
             update: "&"
         },
         template: `
-      <ui-select ng-model="$ctrl.selectedEffect" on-select="$ctrl.selectOption($item, $model)" theme="bootstrap">
-        <ui-select-match placeholder="Select or search for an effect... ">{{$select.selected.name}}</ui-select-match>
-        <ui-select-choices repeat="option in $ctrl.options | filter: { name: $select.search }" style="position:relative;">
-          <div ng-bind-html="option.name | highlight: $select.search"></div>
-          <small class="muted">{{option.description}}</small>
+        <ui-select ng-model="$ctrl.selectedEffect" on-select="$ctrl.selectOption($item, $model)" theme="bootstrap">
+            <ui-select-match placeholder="Select or search for an effect... ">{{$select.selected.name}}</ui-select-match>
+            <ui-select-choices repeat="option in $ctrl.options | filter: { name: $select.search }" style="position:relative;">
+            <div ng-bind-html="option.name | highlight: $select.search"></div>
+            <small class="muted">{{option.description}}</small>
 
-          <span ng-show="option.dependencies.length > 0" class="muted" style="font-size: 12px; position: absolute; top: 4px; right: 4px;" uib-tooltip-html="'<b>Dependencies:</b><br /> ' + $ctrl.getDependencyString(option.dependencies)" tooltip-append-to-body="true"><i class="fal fa-link"></i></span>
+            <span ng-show="option.dependencies.length > 0" class="muted" style="font-size: 12px; position: absolute; top: 4px; right: 4px;" uib-tooltip-html="'<b>Dependencies:</b><br /> ' + $ctrl.getDependencyString(option.dependencies)" tooltip-append-to-body="true"><i class="fal fa-link"></i></span>
 
-        </ui-select-choices>
-      </ui-select>
-      `,
+            </ui-select-choices>
+        </ui-select>
+        `,
         controller: function(
             $scope,
             $element,

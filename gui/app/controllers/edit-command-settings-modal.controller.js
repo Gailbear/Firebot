@@ -2,6 +2,9 @@
 (function($) {
     // This handles the Groups tab
 
+    const hasOwnProperty = Object.prototype.hasOwnProperty;
+    const has = (subject, property) => hasOwnProperty.call(subject, property);
+
     angular
         .module("firebotApp")
         .controller("editCommandSettingsModalController", function(
@@ -58,7 +61,7 @@
 
                         let allCommands = commandsService.getAllCommandsForType('Active');
                         for (let commandItem in allCommands) {
-                            if (allCommands.hasOwnProperty(commandItem)) {
+                            if (has(allCommands, commandItem)) {
                                 let command = allCommands[commandItem];
                                 commandTriggers[command.commandID] = command.trigger;
                                 $scope.allCommandIds.push(command.commandID);
