@@ -15,7 +15,7 @@ const model = {
             </div>
         </div>
     `,
-    optionsController: ($scope) => {
+    optionsController: () => {
 
     },
     optionsValueDisplay: (restriction) => {
@@ -24,20 +24,15 @@ const model = {
         return interactions + "+";
     },
     /*
-      function that resolves/rejects a promise based on if the restriction critera is met
+        function that resolves/rejects a promise based on if the restriction critera is met
     */
-    predicate: (triggerData, restrictionData) => {
-        return new Promise(async (resolve, reject) => {
-            resolve();
-        });
+    predicate: () => {
+        return Promise.resolve();
     },
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
-
+    onSuccessful: () => {}
 };
 
 module.exports = model;

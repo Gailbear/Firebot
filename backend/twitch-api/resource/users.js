@@ -126,7 +126,7 @@ async function getUsersChatRoles(userIdOrName = "") {
     return roles;
 }
 
-async function updateUserRole(userId, role, addOrRemove) {
+async function updateUserRole() {
     // eslint-disable-next-line no-warning-comments
     //TODO: Needs to be updated for twitch.
     return true;

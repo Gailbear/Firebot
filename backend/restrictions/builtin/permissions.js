@@ -18,7 +18,7 @@ const model = {
             </div>
             <div style="margin-bottom: 10px">
                 <label class="control-fb control--radio">Roles <span class="muted"><br />Restrict access to select viewer roles</span>
-                    <input type="radio" ng-model="restriction.mode" value="roles"/> 
+                    <input type="radio" ng-model="restriction.mode" value="roles"/>
                     <div class="control__indicator"></div>
                 </label>
                 <label class="control-fb control--radio" >Single Viewer <span class="muted"><br />Restrict access to a single viewer name</span>
@@ -51,14 +51,14 @@ const model = {
                             <div class="control__indicator"></div>
                         </label>
                     </div>
-                </div> 
+                </div>
             </div>
 
             <div ng-if="restriction.mode === 'viewer'">
                 <div id="username" class="mixplay-header" style="padding: 0 0 4px 0">
                     Username
                 </div>
-                <input type="text" class="form-control" aria-describedby="username" ng-model="restriction.username" placeholder="Enter name">  
+                <input type="text" class="form-control" aria-describedby="username" ng-model="restriction.username" placeholder="Enter name">
             </div>
         </div>
     `,
@@ -146,10 +146,7 @@ const model = {
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
-
+    onSuccessful: () => {}
 };
 
 module.exports = model;

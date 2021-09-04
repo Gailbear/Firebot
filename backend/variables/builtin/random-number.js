@@ -18,7 +18,7 @@ const model = {
     evaluator: (_, min, max) => {
         return util.getRandomInt(min, max);
     },
-    argsCheck: (min, max) => {
+    argsCheck: () => {
 
         /*if (min == null || isNaN(min)) {
             throw new SyntaxError("A valid min number needs to be specified!");
