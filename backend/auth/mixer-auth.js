@@ -1,9 +1,6 @@
 "use strict";
 
 const authManager = require("./auth-manager");
-const accountAccess = require("../common/account-access");
-const effectsManager = require("../effects/effectManager");
-
 
 const MIXER_CLIENT_ID = "eb2f0f37d57de659852af2f409e95889c868d9caf128e396";
 const HOST = "https://mixer.com";
