@@ -1,6 +1,5 @@
 "use strict";
 const robot = require("robotjs");
-const logger = require("../../../logwrapper");
 
 // Joystick Controls
 function joystick(inputEvent) {

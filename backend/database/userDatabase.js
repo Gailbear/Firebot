@@ -204,6 +204,7 @@ function getUserById(id) {
     });
 }
 
+/*
 //function to escape regex characters for search
 function escape(s) {
     return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"); // eslint-disable-line no-useless-escape
@@ -223,6 +224,7 @@ function searchUsers(usernameFragment) {
         });
     });
 }
+*/
 
 function getAllUsernames() {
     return new Promise(resolve => {
@@ -564,7 +566,7 @@ async function setChatUsersOnline() {
 
 //set user offline, update time spent records
 function setChatUserOffline(id) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         if (!isViewerDBOn()) {
             return resolve();
         }
@@ -778,7 +780,7 @@ frontendCommunicator.onAsync("getViewerFirebotData", (userId) => {
     return getUserById(userId);
 });
 
-frontendCommunicator.onAsync("createViewerFirebotData", data => {
+frontendCommunicator.onAsync("createViewerFirebotData", () => {
     //return createNewUser(data.id, data.username, data.roles);
 });
 
@@ -790,8 +792,8 @@ frontendCommunicator.onAsync("getViewerDetails", (userId) => {
     return userAccess.getUserDetails(userId);
 });
 
-frontendCommunicator.on("updateViewerRole", (data) => {
-    const { userId, role, addOrRemove } = data;
+frontendCommunicator.on("updateViewerRole", () => {
+    // const { userId, role, addOrRemove } = data;
     //await twitchApi.users.updateUserRole(userId, role, addOrRemove);
 });
 
@@ -801,7 +803,7 @@ frontendCommunicator.on("updateViewerDataField", (data) => {
     let updateObject = {};
     updateObject[field] = value;
 
-    db.update({ _id: userId }, { $set: updateObject }, { returnUpdatedDocs: true }, function(err, _, updatedDoc) {
+    db.update({ _id: userId }, { $set: updateObject }, { returnUpdatedDocs: true }, function(err) {
         if (err) {
             logger.error("Error updating user.", err);
         }
@@ -828,7 +830,7 @@ ipcMain.on("viewer-db-change", (event, data) => {
 });
 
 // Connect to the DBs
-ipcMain.on("viewerDbConnect", event => {
+ipcMain.on("viewerDbConnect", () => {
     if (!isViewerDBOn()) {
         return;
     }
@@ -837,7 +839,7 @@ ipcMain.on("viewerDbConnect", event => {
 });
 
 // Disconnect from DBs
-ipcMain.on("viewerDbDisconnect", (event, data) => {
+ipcMain.on("viewerDbDisconnect", () => {
     setAllUsersOffline();
     db = null;
 

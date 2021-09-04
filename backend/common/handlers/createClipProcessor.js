@@ -3,18 +3,21 @@
 const twitchChat = require("../../chat/twitch-chat");
 const logger = require("../../logwrapper");
 const accountAccess = require("../account-access");
-const { settings } = require("../settings-access");
-const sanitize = require("sanitize-filename");
-const path = require("path");
 const discordEmbedBuilder = require("../../integrations/builtin/discord/discord-embed-builder");
 const discord = require("../../integrations/builtin/discord/discord-message-sender");
-const downloadClip = require("./clip-downloader");
+
 const utils = require("../../utility");
 
 const twitchApi = require("../../twitch-api/client");
-const { where } = require("underscore");
+
 const client = twitchApi.getClient();
 
+/*
+const { settings } = require("../settings-access");
+const sanitize = require("sanitize-filename");
+const path = require("path");
+const { where } = require("underscore");
+const downloadClip = require("./clip-downloader");
 function downloadAndSaveClip(clipProperties) {
     return new Promise((resolve, reject) => {
         logger.debug("Starting clip download...");
@@ -38,8 +41,9 @@ function downloadAndSaveClip(clipProperties) {
         });
     });
 }
+*/
 
-exports.createClip = async function(effect, trigger) {
+exports.createClip = async function(effect) {
 
     const streamerAccount = accountAccess.getAccounts().streamer;
     const broadcast = await client.helix.streams.getStreamByUserName(streamerAccount.username);

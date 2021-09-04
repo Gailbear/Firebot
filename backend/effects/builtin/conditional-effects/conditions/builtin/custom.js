@@ -22,7 +22,7 @@ module.exports = {
     ],
     leftSideValueType: "text",
     rightSideValueType: "text",
-    predicate: (conditionSettings, trigger) => {
+    predicate: (conditionSettings) => {
 
         let { comparisonType, leftSideValue, rightSideValue } = conditionSettings;
 
