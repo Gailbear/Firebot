@@ -2,6 +2,8 @@
 
 (function() {
 
+    const hasOwnProperty = Object.prototype.hasOwnProperty;
+    const has = (subject, property) => hasOwnProperty.call(subject, property);
     /*
         This service is the new way to communicate to the backend.
         It ensures we do not cause a memory leak by registering the same listener for an event on ipcRenderer
@@ -52,7 +54,7 @@
                     };
 
 
-                if (listeners.hasOwnProperty(eventName)) {
+                if (has(listeners, eventName)) {
                     listeners[eventName].push(event);
                 } else {
                     listeners[eventName] = [event];

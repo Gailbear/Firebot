@@ -7,6 +7,7 @@
         .factory("keyHelper", function() {
             let service = {};
 
+            /*
             // names of known key codes (0-255)
             let keyboardNameMap = [
                 "", // [0]
@@ -266,6 +267,7 @@
                 "WIN_OEM_CLEAR", // [254]
                 "" // [255]
             ];
+            */
 
             // This has the UnShifted and Shifted characters that each key maps to
             // Ones that are to be ignored for character input are empty.

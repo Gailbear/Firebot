@@ -16,7 +16,7 @@
                 replace: true,
                 template: `<div><div id="child"></div></div>`,
                 link: function($scope, element) {
-                    $scope.$watch("type", function(newValue, oldValue) {
+                    $scope.$watch("type", function() {
                         let effectDef = $scope.effectDef;
 
                         if (effectDef == null) {

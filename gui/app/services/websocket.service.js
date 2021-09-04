@@ -1,8 +1,8 @@
 "use strict";
 
 (function() {
-    const WebSocket = require("ws");
-    const WebSocketServer = WebSocket.Server;
+    // const WebSocket = require("ws");
+    // const WebSocketServer = WebSocket.Server;
 
     // This provides methods for sending stuff to the websocket
 
@@ -10,16 +10,16 @@
         .module("firebotApp")
         .factory("websocketService", function(
             logger,
-            listenerService,
+            listenerService /*,
             settingsService,
             $timeout,
             $interval,
-            $rootScope
+            $rootScope */
         ) {
             let service = {};
 
             // Setup the WebSocketServer with the saved port.
-            let port = settingsService.getWebSocketPort();
+            // let port = settingsService.getWebSocketPort();
 
             function showEvents(data) {
                 let showEventsPosition = data.showEventsPosition;
@@ -50,7 +50,7 @@
                 }
                 if (
                     showEventsBackgroundColor === "" ||
-          showEventsBackgroundColor == null
+                    showEventsBackgroundColor == null
                 ) {
                     showEventsBackgroundColor = "transparent";
                 }
@@ -201,17 +201,19 @@
 
             // Websocket Server
             // This allows for the guiBroadcast call to send out data via websocket.
-            service.broadcast = function(data) {
-                /*data = JSON.stringify(data);
-        wss.clients.forEach(function each(client) {
-          if (client.readyState === 1) {
-            client.send(data, err => {
-              if (err) {
-                logger.error(err);
-              }
-            });
-          }
-        });*/
+            service.broadcast = function() {
+                /*
+                data = JSON.stringify(data);
+                wss.clients.forEach(function each(client) {
+                    if (client.readyState === 1) {
+                        client.send(data, err => {
+                            if (err) {
+                                logger.error(err);
+                            }
+                        });
+                    }
+                });
+                */
             };
 
             service.hasClientsConnected = false;

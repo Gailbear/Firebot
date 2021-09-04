@@ -4,7 +4,6 @@
 
     const fs = require("fs-extra");
     const path = require("path");
-    const moment = require("moment");
     const unzipper = require("unzipper");
     const empty = require("empty-folder");
 

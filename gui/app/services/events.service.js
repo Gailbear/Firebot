@@ -4,7 +4,7 @@
     //This handles events
     const uuidv1 = require("uuid/v1");
 
-    angular.module("firebotApp").factory("eventsService", function(logger, backendCommunicator, objectCopyHelper, utilityService) {
+    angular.module("firebotApp").factory("eventsService", function(logger, backendCommunicator, objectCopyHelper) {
         let service = {};
 
         let mainEvents = [];

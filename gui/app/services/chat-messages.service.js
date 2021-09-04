@@ -136,7 +136,7 @@
             // Currently, this only checks for bans. It does not automatically unban the user after.
             // Reason is, people can be added to our banned user group without being banned from the channel.
             // But we're assuming here that if they're banned from the channel we should ban them from interactive always.
-            service.userUpdate = function(data) {
+            service.userUpdate = function() {
             };
 
             // Chat Update Handler

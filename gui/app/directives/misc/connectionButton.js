@@ -18,7 +18,7 @@
             </div>
             `,
             controller: function() {
-                let $ctrl = this;
+                // let $ctrl = this;
             }
         });
 }());
