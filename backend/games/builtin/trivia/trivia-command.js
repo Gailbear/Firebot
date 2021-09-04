@@ -154,7 +154,7 @@ const triviaCommand = {
             const question = await triviaHelper.getQuestion(
                 triviaSettings.settings.questionSettings.enabledCategories,
                 triviaSettings.settings.questionSettings.enabledDifficulties,
-                triviaSettings.settings.questionSettings.enabledTypes,
+                triviaSettings.settings.questionSettings.enabledTypes
             );
 
             if (question == null) {

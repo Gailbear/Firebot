@@ -8,6 +8,10 @@ const frontendCommunicator = require("../common/frontend-communicator");
 
 const EVENTS_FOLDER = "/events/";
 
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+const has = (subject, property) => hasOwnProperty.call(subject, property);
+
+
 let mainEvents = [];
 let groups = {};
 let sortTags = [];
@@ -42,7 +46,7 @@ function saveAllGroups(groupsToSave) {
 
 function removeEventFromGroups(eventId) {
     for (let group in groups) {
-        if (groups.hasOwnProperty(group)) {
+        if (has(groups, group)) {
             let events = groups[group].events;
 
             groups[group].events = events.filter(e => e.id !== eventId);
