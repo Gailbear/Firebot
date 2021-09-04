@@ -76,6 +76,7 @@ module.exports = {
 
         // Other deviations
         "no-warning-comments": ["warn", {"terms": ["todo", "to do", "fix", "fixme", "fix me", "need"], "location": "start"}], // warn about todo comments
-        "no-unused-vars": ["warn"]
+        "no-unused-vars": ["warn"],
+        "no-async-promise-executor": ["warn"] // async function in `new Promise()` results in warning
     }
 };
