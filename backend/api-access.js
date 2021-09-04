@@ -1,7 +1,6 @@
 "use strict";
 const logger = require("./logwrapper");
 const request = require("request");
-const axios = require('axios');
 const accountAccess = require("./common/account-access");
 const CLIENT_ID = "umhhyrvkdriayr0psc3ttmsnq2j8h0";
 
