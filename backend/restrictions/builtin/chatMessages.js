@@ -15,16 +15,14 @@ const model = {
             <input type="number" class="form-control" placeholder="0" ng-model="restriction.messages">
         </div>
     `,
-    optionsController: ($scope) => {
-
-    },
+    optionsController: () => {},
     optionsValueDisplay: (restriction) => {
         let messages = restriction.messages || 0;
 
         return messages + "+";
     },
     /*
-      function that resolves/rejects a promise based on if the restriction critera is met
+        function that resolves/rejects a promise based on if the restriction critera is met
     */
     predicate: (triggerData, restrictionData) => {
         return new Promise(async (resolve, reject) => {
@@ -47,9 +45,7 @@ const model = {
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
+    onSuccessful: () => {}
 
 };
 

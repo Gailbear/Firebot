@@ -1,7 +1,5 @@
 "use strict";
 
-const channelAccess = require("../../common/channel-access");
-
 const model = {
     definition: {
         id: "firebot:channelprogression",
@@ -14,7 +12,7 @@ const model = {
         <div>
             <div class="alert alert-danger">
                 This restriction only worked on Mixer. It now does nothing and can be removed.
-            </div> 
+            </div>
         </div>
     `,
     optionsController: ($scope) => {
@@ -27,19 +25,13 @@ const model = {
         return `Lvl ${level}+`;
     },
     /*
-      function that resolves/rejects a promise based on if the restriction critera is met
+        function that resolves/rejects a promise based on if the restriction critera is met
     */
-    predicate: (triggerData, restrictionData) => {
-        return new Promise(async (resolve, reject) => {
-            resolve();
-        });
-    },
+    predicate: () => Promise.resolve(),
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
+    onSuccessful: () => {}
 
 };
 

@@ -112,9 +112,7 @@ const model = {
             }
         });
     },
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
+    onSuccessful: () => {}
 
 };
 

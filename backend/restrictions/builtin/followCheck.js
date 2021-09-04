@@ -15,9 +15,7 @@ const model = {
             <input type="text" class="form-control" placeholder="Enter value" ng-model="restriction.value">
         </div>
     `,
-    optionsController: ($scope) => {
-
-    },
+    optionsController: () => {},
     optionsValueDisplay: (restriction) => {
         let value = restriction.value;
 
@@ -57,9 +55,7 @@ const model = {
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
+    onSuccessful: () => {}
 
 };
 

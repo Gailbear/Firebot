@@ -60,7 +60,7 @@ const randomEffect = {
     /**
    * When the effect is saved
    */
-    optionsValidator: effect => {
+    optionsValidator: () => {
         let errors = [];
         return errors;
     },

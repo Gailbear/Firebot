@@ -20,9 +20,7 @@ const model = {
             <input type="text" class="form-control" placeholder="Enter value" ng-model="restriction.value">
         </div>
     `,
-    optionsController: ($scope) => {
-
-    },
+    optionsController: () => {},
     optionsValueDisplay: (restriction) => {
         let name = restriction.name;
         let value = restriction.value;
@@ -34,7 +32,7 @@ const model = {
         return name + " is " + value;
     },
     /*
-      function that resolves/rejects a promise based on if the restriction critera is met
+        function that resolves/rejects a promise based on if the restriction critera is met
     */
     predicate: (_, restrictionData) => {
         return new Promise(async (resolve, reject) => {
@@ -65,10 +63,7 @@ const model = {
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
-
+    onSuccessful: () => {}
 };
 
 module.exports = model;

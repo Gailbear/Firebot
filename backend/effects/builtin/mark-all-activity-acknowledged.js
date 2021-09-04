@@ -19,7 +19,7 @@ const model = {
         </eos-container>
     `,
     optionsController: () => {},
-    optionsValidator: effect => {
+    optionsValidator: () => {
         return [];
     },
     onTriggerEvent: async () => {

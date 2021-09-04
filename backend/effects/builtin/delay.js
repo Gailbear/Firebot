@@ -20,7 +20,7 @@ const model = {
             </div>
         </eos-container>
     `,
-    optionsController: $scope => {},
+    optionsController: () => {},
     optionsValidator: effect => {
         let errors = [];
         if (effect.delay == null || effect.delay.length < 1) {

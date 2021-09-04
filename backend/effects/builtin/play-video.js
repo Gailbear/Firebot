@@ -336,9 +336,11 @@ const playVideo = {
                     fileExt = "ogg";
                 }
                 let youtubeId = data.youtubeId;
+                /*
                 let videoPosition = data.videoPosition;
                 let videoHeight = data.videoHeight;
                 let videoWidth = data.videoWidth;
+                */
                 let videoDuration = data.videoDuration != null && data.videoDuration !== "" ? parseFloat(data.videoDuration) * 1000 : null;
                 let videoVolume = data.videoVolume;
                 let videoStarttime = data.videoStarttime || 0;
@@ -525,7 +527,7 @@ const playVideo = {
                         ytOptions.width = data.videoWidth;
                     }
 
-                    let player = new YT.Player(ytPlayerId, ytOptions); // eslint-disable-line no-undef
+                    new YT.Player(ytPlayerId, ytOptions); // eslint-disable-line no-undef
 
                     // Remove div after X time.
                     if (videoDuration) {
