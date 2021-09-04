@@ -7,7 +7,6 @@ const effectManager = require("../effects/effectManager");
 const effectRunner = require("../common/effect-runner");
 const restrictionsManager = require("../restrictions/restriction-manager");
 const { TriggerType } = require("../common/EffectType");
-const { settings } = require('../common/settings-access');
 const userDatabase = require("../database/userDatabase.js");
 const cooldownManager = require("./cooldown-manager");
 const logger = require("../logwrapper");

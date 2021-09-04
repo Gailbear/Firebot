@@ -1,6 +1,6 @@
 "use strict";
 
-const variableManager = require("../../../../variables/replace-variable-manager");
+// const variableManager = require("../../../../variables/replace-variable-manager");
 
 exports.registerVariables = () => {
 };

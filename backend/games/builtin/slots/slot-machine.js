@@ -4,6 +4,7 @@ const util = require("../../../utility");
 
 const SPIN_COUNT = 3;
 
+/*
 function getSpinLabel(spinCount) {
     switch (spinCount) {
     case 1:
@@ -14,6 +15,7 @@ function getSpinLabel(spinCount) {
         return "Third";
     }
 }
+*/
 
 async function spin(username, successChance, chatter) {
 

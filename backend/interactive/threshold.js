@@ -4,11 +4,13 @@
 // This var will save the threshhold status of all buttons.
 let thresholdSaved = [];
 
+/*
 // Progress Calculator
 function progressCalc(thresholdSaved, threshold) {
     let progress = thresholdSaved / threshold;
     return progress;
 }
+*/
 
 // Handles all threshold requests
 function thresholdRouter(control) {

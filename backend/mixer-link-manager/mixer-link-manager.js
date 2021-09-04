@@ -1,8 +1,5 @@
 'use strict';
-
-const logger = require('../logwrapper');
 const NodeCache = require("node-cache");
-
 const userDatabase = require("../database/userDatabase");
 
 // cache link requests for 60 secs

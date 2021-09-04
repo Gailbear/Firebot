@@ -1,7 +1,6 @@
 "use strict";
 
 const NodeCache = require("node-cache");
-const logger = require("../logwrapper");
 const { EffectTrigger } = require("../effects/models/effectModels");
 const filterManager = require("./filters/filter-manager");
 const eventsAccess = require("./events-access");
@@ -16,10 +15,10 @@ const userEventCache = new NodeCache({ stdTTL: 43200, checkperiod: 600 });
 function cacheNewEvent(sourceId, eventId, eventSettingId, ttlInSecs = undefined, eventMetaKey = null) {
     /**
     Example of cache storage.
-      {
-          "twitch:FOLLOWED:9f7a8640-3e59-11ea-ae88-19476d11930a:Mage": true,
-          "twitch:FOLLOWED:9f7a8640-3e59-11ea-ae88-19476d11930a:ebiggz": true
-      }
+    {
+        "twitch:FOLLOWED:9f7a8640-3e59-11ea-ae88-19476d11930a:Mage": true,
+        "twitch:FOLLOWED:9f7a8640-3e59-11ea-ae88-19476d11930a:ebiggz": true
+    }
     **/
 
     let key = `${sourceId}:${eventId}:${eventSettingId}`;
@@ -53,6 +52,7 @@ function runEventEffects(effects, event, source, meta, isManual = false) {
     });
 }
 
+/*
 let eventQueue = [];
 let queueRunning = false;
 
@@ -75,6 +75,17 @@ function runQueue() {
         });
     });
 }
+function addEventToQueue(eventPacket) {
+    eventQueue.push(eventPacket);
+
+    if (!queueRunning) {
+        queueRunning = true;
+        runQueue().then(() => {
+            queueRunning = false;
+        });
+    }
+}
+*/
 
 function cacheActivityFeedEvent(source, event, meta) {
     if (event.cached) {
@@ -91,17 +102,6 @@ function cacheActivityFeedEvent(source, event, meta) {
         );
     }
     return false;
-}
-
-function addEventToQueue(eventPacket) {
-    eventQueue.push(eventPacket);
-
-    if (!queueRunning) {
-        queueRunning = true;
-        runQueue().then(() => {
-            queueRunning = false;
-        });
-    }
 }
 
 async function onEventTriggered(event, source, meta, isManual = false, isRetrigger = false) {

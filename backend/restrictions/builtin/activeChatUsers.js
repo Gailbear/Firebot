@@ -14,16 +14,14 @@ const model = {
             </div>
         </div>
     `,
-    optionsController: ($scope) => {
-
-    },
-    optionsValueDisplay: (restriction) => {
+    optionsController: () => {},
+    optionsValueDisplay: () => {
         return "";
     },
     /*
-      function that resolves/rejects a promise based on if the restriction critera is met
+        function that resolves/rejects a promise based on if the restriction critera is met
     */
-    predicate: (triggerData, restrictionData) => {
+    predicate: (triggerData) => {
         return new Promise((resolve, reject) => {
             const activeUserHandler = require("../../chat/chat-listeners/active-user-handler");
             let username = triggerData.metadata.username;
@@ -38,10 +36,7 @@ const model = {
     /*
         called after all restrictions in a list are met. Do logic such as deducting currency here.
     */
-    onSuccessful: (triggerData, restrictionData) => {
-
-    }
-
+    onSuccessful: () => {}
 };
 
 module.exports = model;

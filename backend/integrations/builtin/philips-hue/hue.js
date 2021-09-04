@@ -49,8 +49,7 @@ class HueIntegration extends EventEmitter {
             }
         }
     }
-    async connect(integrationData) {
-
+    async connect() {
         return false;
     }
     disconnect() {

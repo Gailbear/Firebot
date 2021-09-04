@@ -75,6 +75,7 @@ module.exports = logger;
 // #### @key {string} **Optional** Optional key represented by obj in a larger object
 // Performs simple comma-separated, `key=value` serialization for Loggly when
 // logging to non-JSON inputs.
+/*
 function serialize(obj, key) {
     // symbols cannot be directly casted to strings
     if (typeof key === "symbol") {
@@ -129,3 +130,4 @@ function serialize(obj, key) {
 
     return msg;
 }
+*/

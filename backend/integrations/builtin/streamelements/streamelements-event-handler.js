@@ -1,7 +1,5 @@
 "use strict";
 
-const logger = require("../../../logwrapper");
-
 const eventManager = require("../../../events/EventManager");
 
 const EVENT_SOURCE_ID = "streamelements";

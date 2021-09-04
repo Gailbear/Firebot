@@ -303,14 +303,14 @@ module.exports = {
             }
         }
     },
-    onLoad: settings => {
+    onLoad: () => {
         triviaCommand.registerTriviaCommand();
     },
-    onUnload: settings => {
+    onUnload: () => {
         triviaCommand.unregisterTriviaCommand();
         triviaCommand.purgeCaches();
     },
-    onSettingsUpdate: settings => {
+    onSettingsUpdate: () => {
         triviaCommand.purgeCaches();
     }
 };

@@ -41,7 +41,7 @@ const spinCommand = {
     },
     onTriggerEvent: async event => {
 
-        const { chatEvent, userCommand } = event;
+        const { userCommand } = event;
 
         const slotsSettings = gameManager.getGameSettings("firebot-slots");
         const chatter = slotsSettings.settings.chatSettings.chatter;

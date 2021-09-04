@@ -53,7 +53,7 @@ class DiscordIntegration extends EventEmitter {
     init() {
         effectManager.registerEffect(require('./send-discord-message-effect'));
     }
-    onUserSettingsUpdate(integrationData) {}
+    onUserSettingsUpdate() {}
     connect() {}
     disconnect() {}
     link() {}

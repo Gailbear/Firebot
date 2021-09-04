@@ -23,7 +23,7 @@ const model = {
                     <div style="height: 35px; display:flex; flex-direction: row; align-items: center;">
                         <img style="height: 40px; width: 30px; border-radius: 5px; margin-right:10px;" ng-src="{{game.boxArtUrl}}">
                         <div style="font-weight: 100;font-size: 17px;">{{game.name}}</div>
-                    </div>                                  
+                    </div>
                 </ui-select-choices>
             </ui-select>
         </div>
@@ -96,8 +96,7 @@ const model = {
             }
         });
     },
-    onSuccessful: (triggerData, restrictionData) => {}
-
+    onSuccessful: () => {}
 };
 
 module.exports = model;

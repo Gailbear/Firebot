@@ -39,11 +39,12 @@ function userIsExempt(participant) {
     }
 
     logger.info(`Checking channel groups...`);
-    let userRoles = participant.channelGroups;
 
     // TODO: Rewrite this to work in V5 when we reimplement Spark Exemptions
 
-    /*let combinedRoles = permissions.getCombinedRoles(participant.username, userRoles),
+    /*
+    let userRoles = participant.channelGroups;
+    let combinedRoles = permissions.getCombinedRoles(participant.username, userRoles),
         exemptGroupMap = permissions.mapRoleNames(exemptGroups);
 
     if (exemptGroupMap.length === 0 || exemptGroupMap.every(g => g == null || g.trim() === "")) {

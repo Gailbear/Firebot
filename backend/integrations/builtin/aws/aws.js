@@ -57,7 +57,7 @@ class AwsIntegration extends EventEmitter {
     init() {
         effectManager.registerEffect(require('./text-to-speech-polly-effect'));
     }
-    onUserSettingsUpdate(integrationData) { }
+    onUserSettingsUpdate() { }
     connect() { }
     disconnect() { }
     link() { }
