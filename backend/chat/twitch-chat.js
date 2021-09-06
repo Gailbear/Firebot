@@ -356,9 +356,24 @@ class TwitchChat extends EventEmitter {
     }
 
     disableSlowMode() {
+        logger.debug("Disabling slow mode!");
         if (this._streamerChatClient == null) return;
         const streamer = accountAccess.getAccounts().streamer.username;
         this._streamerChatClient.disableSlow(streamer);
+    }
+
+    enableUniqueMode() {
+        logger.debug("Enabling R9K");
+        if (this._streamerChatClient == null) return;
+        const streamer = accountAccess.getAccounts().streamer.username;
+        this._streamerChatClient.enableR9k(streamer);
+    }
+
+    disableUniqueMode() {
+        logger.debug("Disabling R9K");
+        if (this._streamerChatClient == null) return;
+        const streamer = accountAccess.getAccounts().streamer.username;
+        this._streamerChatClient.disableR9k(streamer);
     }
 
     purgeUserMessages(username, reason = "") {

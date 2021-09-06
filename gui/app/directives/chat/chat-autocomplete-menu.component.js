@@ -186,6 +186,15 @@
                                     display: "/emoteonlyoff",
                                     description: "Turn off emote-only mode",
                                     text: "/emoteonlyoff"
+                                },
+                                {
+                                    display: "/uniquechat",
+                                    description: "Prevent users from sending duplicate messages in Chat (R9K)",
+                                    text: "/uniquechat"
+                                },
+                                {
+                                    display: "/uniqueoff",
+                                    text: "/uniqueoff"
                                 }
                             ]
                         },
