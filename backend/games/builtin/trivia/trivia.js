@@ -64,7 +64,7 @@ module.exports = {
                     type: "multiselect",
                     title: "Enabled Categories",
                     description: "Categories of questions that are enabled",
-                    default: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32],
+                    default: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, "sociology"],
                     settings: {
                         options: [
                             {
@@ -162,6 +162,10 @@ module.exports = {
                             {
                                 "id": 32,
                                 "name": "Entertainment: Cartoon & Animations"
+                            },
+                            {
+                                "id": "sociology",
+                                "name": "Sociology"
                             }
                         ]
                     },
