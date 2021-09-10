@@ -3,6 +3,9 @@
 const axios = require("axios").default;
 const logger = require("../../../logwrapper");
 const utils = require("../../../utility");
+const internalQuestions = require("./questions");
+
+const INTERNAL_CATEGORIES = ['sociology'];
 
 const getRandomItem = (array) => {
     if (array == null || !array.length) {
@@ -54,8 +57,17 @@ async function getSessionToken(forceNew = false) {
     return sessionToken;
 }
 
+function getInternalQuestion(category) {
+    return getRandomItem(internalQuestions[category]);
+}
+
 exports.getQuestion = async (categories, difficulties, types) => {
     const randomCategory = getRandomItem(categories);
+    
+    if (INTERNAL_CATEGORIES.includes(randomCategory)) {
+        return getInternalQuestion(randomCategory);
+    }
+    
     const randomDifficulty = getRandomItem(difficulties);
     const randomType = getRandomItem(types);
 
